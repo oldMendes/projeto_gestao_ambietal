@@ -1,8 +1,8 @@
-import { CreateCategoryUserCase } from "./CreateCategoryUserCase";
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 import { Request, Response } from 'express';
 
 class CreateCategoryController {
-  constructor(private createCategoryUseCase: CreateCategoryUserCase) { }
+  constructor(private createCategoryUseCase: CreateCategoryUseCase) { }
 
   handle(request: Request, response: Response): Response {
 

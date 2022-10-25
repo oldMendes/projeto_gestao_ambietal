@@ -20,7 +20,7 @@ class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ name, description }: ICreateCategoryDTO): void {
+  async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = new Category();
 
     Object.assign(category, {
@@ -33,11 +33,11 @@ class CategoriesRepository implements ICategoriesRepository {
 
   };
 
-  list(): Category[] {
+  async list(): Promise<Category[]> {
     return this.categories;
   }
 
-  findByName(name: string): Category {
+  async findByName(name: string): Promise<Category> {
     const category = this.categories.find(category => category.name === name);
     return category;
   }
