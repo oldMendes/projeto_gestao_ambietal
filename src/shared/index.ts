@@ -5,6 +5,8 @@ import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTok
 import { UsersTokensRepository } from "@modules/accounts/repositories/implementations/UsersTokensRepository";
 import { IDateProvider } from "./providers/DateProvider/IDateProviders";
 import { DayjsDateProvider } from "./providers/DateProvider/implementations/DayjsDateProvider";
+import { IMailProvider } from "./providers/MailProvider.ts/IMailProvider";
+import { EtherealMailProvider } from "./providers/MailProvider.ts/implementations/EtherealMailProvider";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -12,11 +14,16 @@ container.registerSingleton<IUsersRepository>(
 );
 
 container.registerSingleton<IUsersTokensRepository>(
-  "UsersTokenRepository",
+  "UsersTokensRepository",
   UsersTokensRepository
 );
 
 container.registerSingleton<IDateProvider>(
   "DayjsDateProvider",
   DayjsDateProvider
-)
+);
+
+container.registerInstance<IMailProvider>(
+  "EtherealMailProvider",
+  new EtherealMailProvider()
+);

@@ -14,7 +14,7 @@ interface IPayload {
 @injectable()
 class RefreshTokenUseCase {
   constructor(
-    @inject("UsersTokenRepository")
+    @inject("UsersTokensRepository")
     private usersTokenRepository: IUsersTokensRepository,
     @inject("DayjsDateProvider")
     private dateProvider: IDateProvider,

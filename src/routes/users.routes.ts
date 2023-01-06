@@ -6,7 +6,7 @@ const usersRoutes = Router();
 
 const createUserController = new CreateUserController();
 
-usersRoutes.use(ensureAuthenticated);
+// usersRoutes.use(ensureAuthenticated);
 
 usersRoutes.post("/", createUserController.handle);
 

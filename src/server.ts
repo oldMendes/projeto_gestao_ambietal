@@ -4,6 +4,8 @@ import { AppDataSource } from './database/data-source'
 import { AppError } from './errors/AppError';
 import { router } from './routes';
 import "./shared/index";
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 AppDataSource.initialize()
   .then(() => {
